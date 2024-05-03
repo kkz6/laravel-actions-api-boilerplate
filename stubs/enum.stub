@@ -2,7 +2,11 @@
 
 namespace {{ namespace }};
 
-enum {{ class }}
+use App\Contracts\EnumHelpers;
+
+class {{ class }}
 {
-    //
+    use EnumHelpers;
+
+    // @todo add your enum methods.
 }
