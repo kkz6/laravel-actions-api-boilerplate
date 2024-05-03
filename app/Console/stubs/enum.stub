@@ -1,0 +1,12 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Contracts\EnumHelpers;
+
+class {{ class }}
+{
+    use EnumHelpers;
+
+    //case ACTIVE   = 'active';
+}
