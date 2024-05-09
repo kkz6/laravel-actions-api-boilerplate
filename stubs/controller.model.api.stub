@@ -7,6 +7,8 @@ use {{ rootNamespace }}Http\Controllers\Controller;
 use {{ namespacedRequests }}
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\QueryBuilder;
+
 
 class {{ class }} extends Controller
 {
@@ -18,7 +20,7 @@ class {{ class }} extends Controller
         $model = QueryBuilder::for({{ model }}::class)
             ->allowedSorts(['id', 'created_at']);
 
-		return response()->json($model->paginate(perPage: $request->perPage());
+        return response()->json($model->paginate(perPage: $request->perPage()));
 
     }
 
@@ -43,8 +45,8 @@ class {{ class }} extends Controller
      */
     public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }}): JsonResponse
     {
-        $data = tap($model,fn($model) => $model->update($request->valiated()));
-		return response()->json($data);
+        $data = tap(${{ modelVariable }},fn($model) => $model->update($request->validated()));
+        return response()->json($data);
     }
 
     /**
@@ -52,8 +54,9 @@ class {{ class }} extends Controller
      */
     public function destroy({{ model }} ${{ modelVariable }}):JsonResponse
     {
-        ${{ modelVariableName }}->delete();
+        ${{ modelVariable }}->delete();
 
-		return response()->jsonResponse(message:'Item deleted');
+        return response()->json('Item deleted');
     }
 }
+
