@@ -12,6 +12,14 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class {{ class }} extends Controller
 {
+
+    /**
+     * Uses the {{ model }} model to check permissions against
+     *
+     * @var class-string
+     */
+    protected string $model = {{ model }}::class;
+
     /**
      * Display a listing of the resource.
      */
