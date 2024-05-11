@@ -1,0 +1,28 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Http\Requests\ModelRequest;
+use {{ namespacedModel }};
+
+class {{ class }} extends ModelRequest
+{
+    /**
+     * The model the request should be using
+     *
+     * @var class-string
+     */
+    public string $model = {{ model }}::class;
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            //
+        ];
+    }
+}

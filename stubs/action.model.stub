@@ -1,0 +1,28 @@
+<?php
+
+namespace {{ namespace }};
+
+use Library\Actions\ModelAction;
+use {{ namespacedModel }};
+use {{ namespacedRequest }};
+
+class {{ class }} extends ModelAction
+{
+    /**
+     * Handles changes to the {{ model }} model
+     *
+     * @param {{ model }} ${{ modelVariable }}
+     * @param {{ request }} $request
+     *
+     * @return {{ model }}
+     */
+    public function handle( {{ model }} ${{ modelVariable }}, {{ request }} $request ): {{ model }}
+    {
+        return tap(
+            value: ${{ modelVariable }}->fill(
+                attributes: $request->validated()
+            )
+        )->save();
+    }
+
+}

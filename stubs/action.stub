@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use Library\Actions\Action;
+use Library\Actions\Contracts\WithTransaction;
+
+class {{ class }} extends Action {{ maybeImplementsWithTransaction }}
+{
+    /**
+     * Preforms a generic action
+     */
+    public function handle(): mixed
+    {
+        return false;
+    }
+}
