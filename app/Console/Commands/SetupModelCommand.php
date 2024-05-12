@@ -37,8 +37,7 @@ class SetupModelCommand extends Command
         $this->call('make:seeder', ['name' => "{$name}Seeder"]);
 
         //Create the controller
-        $this->call('make:controller', [
-            '----api' => true,
+        $this->call('make:api-controller', [
             'name'               => "{$namespacedName}Controller",
             '--model'            => $name,
             '--resource'         => "{$name}Resource",
