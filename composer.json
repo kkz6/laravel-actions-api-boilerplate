@@ -9,6 +9,7 @@
         "laravel/breeze": "^2.0",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-permission": "^6.7",
         "spatie/laravel-query-builder": "^5.8"
     },
     "require-dev": {
