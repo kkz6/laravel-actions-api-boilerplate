@@ -1,6 +1,6 @@
 name: Central Security Scan
 
-# Central workflow baseline: fa8488c
+# Central workflow baseline: advisory-community-rules
 
 on:
   pull_request:
